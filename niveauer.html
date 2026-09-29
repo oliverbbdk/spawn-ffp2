@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="da">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="Low-end og high-end beskriver ambitionsniveauer, ikke faste systemkrav. Det samme spil kan kræve meget forskellig hardware." name="description"/>
+  <title>
+   Dit niveau | SPAWN – Gaming for begyndere
+  </title>
+  <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="style.css" rel="stylesheet"/>
+  <script defer="" src="script.js">
+  </script>
+ </head>
+ <body>
+  <a class="skip" href="#indhold">
+   Spring til indhold
+  </a>
+  <header class="site-header wrap">
+   <a aria-label="SPAWN forside" class="brand" href="index.html">
+    SPAWN
+    <span>
+     /
+    </span>
+   </a>
+   <nav aria-label="Hovednavigation">
+    <a href="index.html">
+     Forside
+    </a>
+    <a aria-current="page" href="niveauer.html">
+     Dit niveau
+    </a>
+    <a href="udstyr.html">
+     Udstyr
+    </a>
+    <a href="spil.html">
+     Spil &amp; krav
+    </a>
+    <a href="kom-i-gang.html">
+     Kom i gang
+    </a>
+   </nav>
+  </header>
+  <main class="wrap" id="indhold">
+   <section class="hero">
+    <div>
+     <p class="eyebrow">
+      01 / VÆLG DIT NIVEAU
+     </p>
+     <h1>
+      Start med spillet.
+      <br/>
+      Vælg så dit setup.
+     </h1>
+     <p class="lead">
+      Low-end og high-end beskriver ambitionsniveauer, ikke faste systemkrav. Det samme spil kan kræve meget forskellig hardware.
+     </p>
+     <a class="button" href="udstyr.html">
+      Forstå udstyret
+      <span aria-hidden="true">
+       ↗
+      </span>
+     </a>
+    </div>
+   </section>
+   <div aria-label="Din vej ind i gaming" class="route">
+    <span>
+     01 / Vælg spil
+    </span>
+    <span aria-hidden="true">
+     →
+    </span>
+    <span>
+     02 / Tjek PC
+    </span>
+    <span aria-hidden="true">
+     →
+    </span>
+    <span>
+     03 / Tryk start
+    </span>
+   </div>
+   <section class="section">
+    <h2>
+     Tre veje ind i gaming
+    </h2>
+    <div class="cards">
+     <article class="card">
+      <p class="eyebrow">
+       LOW-END
+      </p>
+      <h3>
+       Kom i gang
+      </h3>
+      <p>
+       Lettere spil og lave grafikindstillinger. Prøv din nuværende PC først. 1080p er et oplagt udgangspunkt, hvis spillet kan køre stabilt.
+      </p>
+      <a class="text-link" href="spil.html">
+       Læs mere
+       <span aria-hidden="true">
+        ↗
+       </span>
+       <span class="sr-only">
+        om kom i gang
+       </span>
+      </a>
+     </article>
+     <article class="card">
+      <p class="eyebrow">
+       MELLEMKLASSE
+      </p>
+      <h3>
+       Find balancen
+      </h3>
+      <p>
+       Sigt efter 1080p eller 1440p med gode detaljer. Sammenlign tests af præcis dit spil og grafikkort, før du køber.
+      </p>
+      <a class="text-link" href="spil.html">
+       Læs mere
+       <span aria-hidden="true">
+        ↗
+       </span>
+       <span class="sr-only">
+        om find balancen
+       </span>
+      </a>
+     </article>
+     <article class="card">
+      <p class="eyebrow">
+       HIGH-END
+      </p>
+      <h3>
+       Skru op for detaljerne
+      </h3>
+      <p>
+       Krævende spil, høj opløsning eller høj FPS. 4K og ray tracing øger belastningen og kræver nøje valg af hardware.
+      </p>
+      <a class="text-link" href="spil.html">
+       Læs mere
+       <span aria-hidden="true">
+        ↗
+       </span>
+       <span class="sr-only">
+        om skru op for detaljerne
+       </span>
+      </a>
+     </article>
+    </div>
+   </section>
+   <section class="section" id="niveauguide">
+    <p class="eyebrow">
+     EN HJÆLP TIL AT VÆLGE
+    </p>
+    <h2>
+     Hvad vil du helst spille?
+    </h2>
+    <p>
+     Vælg dit mål. Guiden forklarer prioriteringen; den måler ikke din PC.
+    </p>
+    <form id="level-form">
+     <label for="goal">
+      Dit vigtigste mål
+     </label>
+     <select id="goal" name="goal">
+      <option value="start">
+       Prøve gaming med det udstyr, jeg har
+      </option>
+      <option value="balance">
+       God grafik i 1080p eller 1440p
+      </option>
+      <option value="detail">
+       4K og meget høje detaljer
+      </option>
+      <option value="speed">
+       Høj FPS i konkurrencespil
+      </option>
+     </select>
+     <button class="button" type="submit">
+      Vis min retning
+     </button>
+    </form>
+    <div aria-live="polite" class="callout" id="level-result" role="status">
+     <h3>
+      Start med dit spil
+     </h3>
+     <p>
+      Sammenlign dets officielle krav med din PC. Kategorierne er vejledning, ikke en kompatibilitetstest.
+     </p>
+    </div>
+    <noscript>
+     <p>
+      Guiden kræver JavaScript. Brug de tre niveaukort ovenfor som alternativ.
+     </p>
+    </noscript>
+   </section>
+   <section class="section">
+    <h2>
+     Brug budgettet på det, du mærker
+    </h2>
+    <div class="cards">
+     <article class="card">
+      <h3>
+       Behold først
+      </h3>
+      <p>
+       Prøv den PC, skærm og mus, du allerede har. Skru ned for grafik, før du beslutter, at alt skal skiftes.
+      </p>
+     </article>
+     <article class="card">
+      <h3>
+       Sammenlign hele pakken
+      </h3>
+      <p>
+       Medregn skærm, tastatur, lyd, Windows-licens og spil. Et billigt kabinet med RGB siger intet om ydelsen.
+      </p>
+     </article>
+     <article class="card">
+      <h3>
+       Køb efter dokumentation
+      </h3>
+      <p>
+       Se nyere tests af præcis model, spil og opløsning. Laptop- og desktop-GPU'er med lignende navne kan yde forskelligt.
+      </p>
+     </article>
+    </div>
+    <p class="note">
+     Der gives ingen aktuelle pristilbud eller universelle FPS-løfter. Low-end og high-end ændrer sig med markedet og spillene.
+    </p>
+   </section>
+   <section class="end-cta">
+    <p>
+     Et skridt tættere på din første session.
+    </p>
+    <a class="button" href="udstyr.html">
+     Forstå udstyret ↗
+    </a>
+   </section>
+  </main>
+  <footer class="wrap">
+   <a class="brand" href="index.html">
+    SPAWN /
+   </a>
+   <p>
+    Gaming begynder her.
+    <br/>
+    En uafhængig begynderguide · FFP2 · 2026
+   </p>
+   <a href="spil.html#krav">
+    Kilder &amp; systemkrav
+   </a>
+  </footer>
+ </body>
+</html>

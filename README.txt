@@ -1,7 +1,3 @@
-# SPAWN – gaming for begyndere
-
-Fem statiske, responsive sider med HTML, CSS og JavaScript. Åbn index.html lokalt. Ingen installation kræves.
-
 SPAWN / FFP2
 
 Åbn index.html i en browser. Ingen installation eller internet kræves til selve websitet.
