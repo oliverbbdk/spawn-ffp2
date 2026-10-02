@@ -18,6 +18,9 @@ const hardwareProfiles = [
  {gpu:'NVIDIA RTX 4070 Super · 12 GB',cpu:'AMD Ryzen 7 7800X3D',ram:'32 GB',tier:'High-end til research'},
  {gpu:'NVIDIA RTX 4080 Super · 16 GB',cpu:'AMD Ryzen 7 7800X3D',ram:'32 GB',tier:'High-end / krævende mål'}
 ];
+// Broad budgets for a complete new tower in this market segment, incl. VAT.
+// Retail references and exclusions are shown alongside the estimate.
+const towerBudgets=['4.000–6.000 kr.','6.000–9.000 kr.','8.000–11.000 kr.','10.000–14.000 kr.','13.000–18.000 kr.','18.000–25.000 kr.'];
 const planner=document.querySelector('.planner');
 if(planner){
  const slider=document.querySelector('#fps-range');
@@ -30,19 +33,28 @@ if(planner){
   const increment=fps<=60?0:fps<=120?1:fps<=180?2:3;
   const index=Math.min(hardwareProfiles.length-1,game.base+increment);
   const build=hardwareProfiles[index];
+  put('build-price',towerBudgets[index]);
   put('fps-value',fps);put('selected-game',game.name);
+  put('result-summary',game.name+' · '+fps+' FPS-mål');
   put('build-gpu',build.gpu);put('build-cpu',build.cpu);put('build-ram',build.ram);
   put('build-display',fps<=60?'60–75 Hz':fps<=120?'120–144 Hz':fps<=180?'165–180 Hz':'240 Hz');
   put('build-settings',game.settings);put('build-tier',build.tier);
+  put('budget-direction',index===0?'Start med at undersøge din nuværende PC.':index<=2?'En enkel PC med dedikeret grafik kan være et sted at starte.':'Et mere krævende setup. Sammenlign tests, før du vælger dele.');
+  document.querySelector('#game-select').value=selected;
+  document.querySelectorAll('[data-fps]').forEach(button=>button.setAttribute('aria-pressed',String(Number(button.dataset.fps)===fps)));
+  planner.dataset.level=String(index);
   const demanding=game.base>=2&&fps>120;
   put('build-note',demanding?'Ambitiøst mål: Denne profil lover ikke '+fps+' FPS. Undersøg lavere grafik eller et mål på 60–120 FPS. '+game.note:game.note);
   const source=document.querySelector('#game-source');source.href=game.url;source.textContent=game.name+' · officielle krav ↗';
   slider.style.setProperty('--fill',((fps-30)/210*100)+'%');
   slider.setAttribute('aria-valuetext',fps+' billeder pr. sekund som mål');
   buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.game===selected)));
-  put('planner-status',game.name+', '+fps+' FPS-mål. Researchprofil: '+build.gpu+', '+build.cpu+', '+build.ram+'. Ingen FPS-garanti.');
+  put('planner-status',game.name+', '+fps+' FPS-mål. Researchprofil: '+build.gpu+', '+build.cpu+', '+build.ram+'. Cirka budget for samlet PC: '+towerBudgets[index]+'. Ingen FPS-garanti.');
  }
  buttons.forEach(button=>button.addEventListener('click',()=>{selected=button.dataset.game;updatePlanner();}));
+ document.querySelector('#game-select').addEventListener('change',event=>{selected=event.target.value;updatePlanner();});
+ document.querySelectorAll('[data-fps]').forEach(button=>button.addEventListener('click',()=>{slider.value=button.dataset.fps;updatePlanner();}));
+ document.querySelector('.price-card a').addEventListener('click',()=>{document.querySelector('#prisgrundlag').open=true;});
  slider.addEventListener('input',updatePlanner);
  updatePlanner();planner.hidden=false;
 }
