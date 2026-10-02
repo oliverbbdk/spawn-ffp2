@@ -9,10 +9,12 @@
   </title>
   <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
   <link href="style.css" rel="stylesheet"/>
+<link href="upgrade.css" rel="stylesheet"/>
   <script defer="" src="script.js">
   </script>
- </head>
- <body>
+ <script src="planner.js" defer></script>
+</head>
+ <body class="page-spil">
   <a class="skip" href="#indhold">
    Spring til indhold
   </a>
@@ -80,6 +82,298 @@
      03 / Tryk start
     </span>
    </div>
+   <section aria-labelledby="setup-title" class="section setup-lab" id="setup">
+    <div class="section-heading">
+     <div>
+      <p class="eyebrow">
+       01 / FIND DIT SETUP
+      </p>
+      <h2 id="setup-title">
+       Dit spil. Din FPS.
+       <br/>
+       <span>
+        Din næste computer.
+       </span>
+      </h2>
+     </div>
+     <p>
+      Start med et spil. Flyt slideren, og se eksempler på de dele, du kan undersøge til dit mål.
+     </p>
+    </div>
+    <noscript>
+     <p class="callout">
+      Slå JavaScript til for at bruge FPS-slideren. Du kan stadig læse
+      <a href="spil.html#krav">
+       systemkravene
+      </a>
+      og
+      <a href="udstyr.html">
+       guiden til computerdele
+      </a>
+      .
+     </p>
+    </noscript>
+    <div class="planner" hidden="">
+     <p class="control-label">
+      Vælg dit spil
+      <span>
+       8 spil · fra let til krævende
+      </span>
+     </p>
+     <div aria-label="Vælg spil" class="game-grid" role="group">
+      <button aria-pressed="true" class="game-tile art-blocks" data-game="roblox" type="button">
+       <span aria-hidden="true" class="game-art">
+        <i>
+        </i>
+        <b>
+         01
+        </b>
+       </span>
+       <span class="game-title">
+        Roblox
+       </span>
+       <span class="game-genre">
+        Sandbox
+       </span>
+      </button>
+      <button aria-pressed="false" class="game-tile art-voxel" data-game="minecraft" type="button">
+       <span aria-hidden="true" class="game-art">
+        <i>
+        </i>
+        <b>
+         02
+        </b>
+       </span>
+       <span class="game-title">
+        Minecraft
+       </span>
+       <span class="game-genre">
+        Byg &amp; udforsk
+       </span>
+      </button>
+      <button aria-pressed="false" class="game-tile art-angles" data-game="valorant" type="button">
+       <span aria-hidden="true" class="game-art">
+        <i>
+        </i>
+        <b>
+         03
+        </b>
+       </span>
+       <span class="game-title">
+        VALORANT
+       </span>
+       <span class="game-genre">
+        Taktisk shooter
+       </span>
+      </button>
+      <button aria-pressed="false" class="game-tile art-crosshair" data-game="cs2" type="button">
+       <span aria-hidden="true" class="game-art">
+        <i>
+        </i>
+        <b>
+         04
+        </b>
+       </span>
+       <span class="game-title">
+        Counter-Strike 2
+       </span>
+       <span class="game-genre">
+        Konkurrence
+       </span>
+      </button>
+      <button aria-pressed="false" class="game-tile art-storm" data-game="fortnite" type="button">
+       <span aria-hidden="true" class="game-art">
+        <i>
+        </i>
+        <b>
+         05
+        </b>
+       </span>
+       <span class="game-title">
+        Fortnite
+       </span>
+       <span class="game-genre">
+        Battle royale
+       </span>
+      </button>
+      <button aria-pressed="false" class="game-tile art-racing" data-game="forza" type="button">
+       <span aria-hidden="true" class="game-art">
+        <i>
+        </i>
+        <b>
+         06
+        </b>
+       </span>
+       <span class="game-title">
+        Forza Horizon 5
+       </span>
+       <span class="game-genre">
+        Racing
+       </span>
+      </button>
+      <button aria-pressed="false" class="game-tile art-city" data-game="cyberpunk" type="button">
+       <span aria-hidden="true" class="game-art">
+        <i>
+        </i>
+        <b>
+         07
+        </b>
+       </span>
+       <span class="game-title">
+        Cyberpunk 2077
+       </span>
+       <span class="game-genre">
+        Open world
+       </span>
+      </button>
+      <button aria-pressed="false" class="game-tile art-moon" data-game="wukong" type="button">
+       <span aria-hidden="true" class="game-art">
+        <i>
+        </i>
+        <b>
+         08
+        </b>
+       </span>
+       <span class="game-title">
+        Black Myth: Wukong
+       </span>
+       <span class="game-genre">
+        Action / high-end
+       </span>
+      </button>
+     </div>
+     <div class="builder-grid">
+      <div class="fps-panel">
+       <div class="panel-top">
+        <span class="pill" id="selected-game">
+         Roblox
+        </span>
+        <span class="muted">
+         1080p
+        </span>
+       </div>
+       <label for="fps-range">
+        Hvor flydende vil du spille?
+       </label>
+       <div class="fps-number">
+        <output for="fps-range" id="fps-value">
+         60
+        </output>
+        <span>
+         FPS-mål
+        </span>
+       </div>
+       <input aria-describedby="fps-explain" id="fps-range" max="240" min="30" step="30" type="range" value="60"/>
+       <div aria-hidden="true" class="range-labels">
+        <span>
+         30 · roligt
+        </span>
+        <span>
+         120 · flydende
+        </span>
+        <span>
+         240 · hurtigt
+        </span>
+       </div>
+       <p id="fps-explain">
+        FPS er billeder pr. sekund. Slideren vælger et mål – den måler ikke din computer.
+       </p>
+       <div class="setting-line">
+        <span>
+         Grafikprofil
+        </span>
+        <strong id="build-settings">
+         Standard · uden tunge effekter
+        </strong>
+       </div>
+       <div class="level-line">
+        <span id="build-tier">
+         En enkel start
+        </span>
+        <span aria-hidden="true">
+         ↗
+        </span>
+       </div>
+      </div>
+      <div class="parts-panel">
+       <div class="panel-top">
+        <p class="eyebrow">
+         HARDWARE AT UNDERSØGE
+        </p>
+        <span class="live-dot">
+         Opdateres med dit valg
+        </span>
+       </div>
+       <div class="part">
+        <span aria-hidden="true" class="part-icon">
+         GPU
+        </span>
+        <div>
+         <span>
+          Grafikkort
+         </span>
+         <h3 id="build-gpu">
+         </h3>
+        </div>
+       </div>
+       <div class="part">
+        <span aria-hidden="true" class="part-icon">
+         CPU
+        </span>
+        <div>
+         <span>
+          Processor
+         </span>
+         <h3 id="build-cpu">
+         </h3>
+        </div>
+       </div>
+       <div class="small-parts">
+        <div>
+         <span>
+          Hukommelse
+         </span>
+         <strong id="build-ram">
+         </strong>
+        </div>
+        <div>
+         <span>
+          Skærm
+         </span>
+         <strong id="build-display">
+         </strong>
+        </div>
+        <div>
+         <span>
+          Lager
+         </span>
+         <strong>
+          SSD · plads efter spil
+         </strong>
+        </div>
+       </div>
+       <p class="build-note" id="build-note">
+       </p>
+       <a class="text-link" href="https://en.help.roblox.com/hc/en-us/articles/203312800-Computer-Hardware-Operating-System-Requirements" id="game-source">
+        Se spillets officielle systemkrav ↗
+       </a>
+       <p aria-live="polite" class="sr-only" id="planner-status" role="status">
+       </p>
+      </div>
+     </div>
+     <details class="method">
+      <summary>
+       Hvordan skal forslagene læses?
+      </summary>
+      <p>
+       Det er illustrative hardwareprofiler til research, ikke benchmarkmålinger, en kompatibilitetstest eller et løfte om den valgte FPS. Profilerne er valgt redaktionelt; de officielle links dokumenterer spillenes krav, ikke sliderens kombinationer. Udgangspunktet er 1920 × 1080 pixels, ingen ray tracing og ingen frame generation. Konkurrencespil bruger lavere grafik; tunge spil bruger medium/høj. Se den konkrete profil ovenfor.
+      </p>
+      <p>
+       En dyrere GPU alene sikrer ikke høj FPS. CPU, baner, mods, opdateringer, køling og indstillinger ændrer resultatet. Find uafhængige tests af præcis spilversion og dele før køb. Tjek også bundkort, strømforsyning, køler, kabinet og operativsystem. Roblox-oplevelser varierer meget, og Minecraft-eksemplet er Java uden shaders.
+      </p>
+     </details>
+    </div>
+   </section>
    <section class="section">
     <h2>
      To spil. Meget forskellige behov.
